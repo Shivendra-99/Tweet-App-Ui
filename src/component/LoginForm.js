@@ -15,7 +15,7 @@ function LoginForm() {
     
     const LoginPage=async (e)=>{
         e.preventDefault();
-      await fetch("http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets/login",{
+      await fetch("/login",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
