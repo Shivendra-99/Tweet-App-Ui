@@ -74,7 +74,7 @@ function ShowCard(props) {
         var all = JSON.parse(localStorage.getItem("Alldata"));
         var userId = JSON.parse(localStorage.getItem("data")).userId;
         var tweetid = all[index].tweetId;
-        fetch(`/${userId}/like/${tweetid}`, {
+        fetch(`https://cors-everywhere.herokuapp.com/http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets/${userId}/like/${tweetid}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -140,7 +140,7 @@ function ShowCard(props) {
                             var tweetUserid = all[index].userId;
                             if (userId === tweetUserid) {
                                 if (window.confirm('Are you sure to delete this Tweet?')) {
-                                    fetch(`/${userId}/delete/${tweetid}`, {
+                                    fetch(`https://cors-everywhere.herokuapp.com/http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets/${userId}/delete/${tweetid}`, {
                                         method: 'DELETE',
                                         headers: {
                                             "Content-Type": "application/json"
@@ -187,7 +187,7 @@ function ShowCard(props) {
                                 var userId = all[index].userId;
                                 var tweetid = all[index].tweetId;
                                 if (comm.length !== 0) {
-                                    fetch(`/${userId}/reply/${tweetid}`, {
+                                    fetch(`https://cors-everywhere.herokuapp.com/http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets/${userId}/reply/${tweetid}`, {
                                         method: "POST",
                                         headers: {
                                             "Content-Type": "application/json"
