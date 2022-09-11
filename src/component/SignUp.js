@@ -105,7 +105,7 @@ function SignUp() {
                             <Form.Control.Feedback type="valid">Looks Good!</Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
-                    <Form.Group as={Col} md="4" controlId="validationCustom02" style={{ width: "250px" }}>
+                    <Form.Group as={Col} md="4" controlId="validationCustom02" style={{ width: "240px" }}>
                         <Form.Label className="text-white">Last name</Form.Label>
                         <InputGroup hasValidation>
                             <Form.Control
@@ -149,7 +149,7 @@ function SignUp() {
                         <Form.Control.Feedback type="valid">Looks Good!</Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group>
-                    <Form.Label className="text-white" >Enter Date Of Birth</Form.Label>
+                    <Form.Label className="text-white">Enter Date Of Birth</Form.Label>
                     <Form.Control type="date" placeholder="Please Enter Date Of Birth" value={dateOfBirth} onChange={setDob} required/>
                     <Form.Control.Feedback type="invalid">
                             Please Enter valid Date Of Birth.
@@ -157,7 +157,7 @@ function SignUp() {
                     <Form.Control.Feedback type="valid">Looks Good!</Form.Control.Feedback>
                     </Form.Group>
                 </Row>
-                <Row className="mb-3" style={{marginLeft: "2px"}}>
+                <Row className="mb-3">
                     <Form.Group as={Row} md="3" controlId="validationCustom04">
                         <Form.Label className="text-white">Password</Form.Label>
                         <Form.Control type="password" placeholder="Enter Password" value={password} onChange={setPassword} required />
