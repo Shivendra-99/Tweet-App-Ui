@@ -148,7 +148,7 @@ function SignUp() {
                         </Form.Control.Feedback>
                         <Form.Control.Feedback type="valid">Looks Good!</Form.Control.Feedback>
                     </Form.Group>
-                    <Form.Group style={{ width: "480px" }}>
+                    <Form.Group>
                     <Form.Label className="text-white" >Enter Date Of Birth</Form.Label>
                     <Form.Control type="date" placeholder="Please Enter Date Of Birth" value={dateOfBirth} onChange={setDob} required/>
                     <Form.Control.Feedback type="invalid">
