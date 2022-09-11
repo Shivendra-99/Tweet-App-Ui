@@ -51,7 +51,7 @@ function SignUp() {
             event.preventDefault();
             event.stopPropagation()
         }else{
-            fetch("/register",{
+            fetch("https://cors-everywhere.herokuapp.com/http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets/register",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
