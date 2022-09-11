@@ -2,13 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import ShowCard from "./ShowCard";
-//import  {useLocation} from "react-router-dom";
 
 function ShowAllTweet() {
     const [tweets, setTweet] = useState([]);
     useEffect((e) => {
         const fetchData = async () => {
-            axios.get("/all").then(response => {
+            axios.get("https://cors-everywhere.herokuapp.com/http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets/all").then(response => {
                 console.log(response);
                 if (response.status === 200) {
                     var data1 = response.data;
