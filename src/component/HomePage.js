@@ -12,7 +12,7 @@ function HomePage() {
         <Container fluid style={{ padding: "0px", backgroundColor: "black" }}>
             <Row>
                 <Col xs={6}>
-                    <div style={{ position: "relative" }}>
+                    <div>
                         <img draggable="false" src={logo} alt="loaded" style={{ width: "750px", height: "750px" }}></img>
                     </div>
                 </Col>
