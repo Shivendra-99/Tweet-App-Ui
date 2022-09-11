@@ -75,7 +75,7 @@ const submitTweet = async () => {
     var value = JSON.parse(localStorage.getItem("data"));
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
-    await fetch(`/${value.userId}/add`, {
+    await fetch(`https://cors-everywhere.herokuapp.com/http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets/${value.userId}/add`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
