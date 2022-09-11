@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import {useNavigate} from "react-router-dom";
+import twitter from "./twitter-pngrepo-com.png";
 function NavBar() {
   const history=useNavigate();
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -68,7 +69,7 @@ function stringAvatar(name) {
       <Navbar fixed="top" bg="primary" expand="lg" variant="dark">
         <Container fluid>
           <Navbar.Brand href="/homePage">
-            <img src="https://th.bing.com/th/id/OIP.-2yiSRFxDGzINV5OGldPwgHaFH?w=288&h=199&c=7&r=0&o=5&pid=1.7" alt="show" style={{ width: "30px", height: "25px", marginRight: "10px" }} />
+            <img src={twitter} alt="show" style={{ width: "30px", height: "25px", marginRight: "10px" }} />
             Tweet App
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
