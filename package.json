@@ -2,7 +2,7 @@
   "name": "newproeject",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets",
+  "proxy": "https://cors-everywhere.herokuapp.com/http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
