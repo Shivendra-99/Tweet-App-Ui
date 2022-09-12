@@ -8,7 +8,6 @@ function ShowAllTweet() {
     useEffect((e) => {
         const fetchData = async () => {
             axios.get("https://cors-everywhere.herokuapp.com/http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets/all").then(response => {
-                console.log(response);
                 if (response.status === 200) {
                     var data1 = response.data;
                     setTweet(data1);
