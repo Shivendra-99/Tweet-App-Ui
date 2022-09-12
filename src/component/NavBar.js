@@ -5,6 +5,7 @@ import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import twitter from "./twitter-pngrepo-com.png";
 import {useNavigate} from "react-router-dom";
+import SearchUser from "./SearchUser";
 function NavBar() {
   const history=useNavigate();
   const StyledBadge = styled(Badge)(({ theme }) => ({
