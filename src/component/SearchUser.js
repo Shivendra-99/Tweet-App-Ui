@@ -12,20 +12,19 @@ const SearchUser = (props) => {
   
     const handleAddressChange = (event) => {
       setInputAddress(event.target.value);
-      findAddresses();
+      findAddresses(event.target.value);
     };  
-    const findAddresses = () => {
-      if (!inputAddress) {
+    const findAddresses = (text) => {
+      if (!text) {
         let addressesResponse;
-  
+        console.log(text)
         return (
           axios.get(`https://cors-everywhere.herokuapp.com/http://tweet-application.us-east-1.elasticbeanstalk.com/api/v1.0/tweets/user/search/${inputAddress}`)
             .then(response => {
               if (response.status==200) {
-                console.log(response.data);
+                setAddressesList(response.data);
                 return;
               }
-              setAddressesList(addressesResponse);
             })
             .catch(error => console.log(error))
         )
@@ -33,28 +32,31 @@ const SearchUser = (props) => {
     }
   
     return (
-      <>
+      <div>
        <Stack spacing={2} sx={{ width: 300 }}>
       <Autocomplete
         freeSolo
         id="free-solo-2-demo"
         disableClearable
-        options={addressesList}
-        getOptionLabel={(option) => option.Text}
+        options={addressesList.map((option,keys) => option)}
         renderInput={(params) => <TextField 
-            id="address-input"                          
+            id="address-input"       
+            color="success"
+            variant="filled"                
             {...params} 
             onChange={handleAddressChange}
-            label="Search input"
+            label="Search User By Name"
+            
             InputProps={{ ...params.InputProps,
                 type: 'search',
+                style: {background: "white"}
             }}
           /> 
         }
         />
     </Stack>
        
-      </>
+      </div>
     );
 }
 export default SearchUser;
