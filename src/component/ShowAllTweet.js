@@ -23,7 +23,7 @@ function ShowAllTweet() {
 
     return (
         <>
-            <Container style={{ marginTop: "50px" }}>
+            <Container style={{ marginTop: "60px" }}>
                 {
                     tweets.map((tweet, index) => {
                         return <ShowCard key={index} username={tweet.userName} twee={tweet.tweet} time={tweet.dateAndTimeOfTweet} like={tweet.like} comment={tweet.comment} index={index} setDel={false}/>
