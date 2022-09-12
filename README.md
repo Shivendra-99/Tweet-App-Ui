@@ -9,7 +9,10 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [https://main.d1ldb5qeqza2f9.amplifyapp.com](https://main.d1ldb5qeqza2f9.amplifyapp.com) to view it in your browser.
+
+### this is Fullstack Application. Frontend and Backend both are deployed on AWS Cloud system
+### 
+Open [https://main.d3nrbzgj7zsp11.amplifyapp.com](https://main.d3nrbzgj7zsp11.amplifyapp.com) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
