@@ -81,15 +81,7 @@ function stringAvatar(name) {
               <Nav.Link href="/homePage">Home</Nav.Link>
               <Nav.Link href="/viewMyTweet">My Tweet</Nav.Link>
             </Nav>
-            <Form className="d-flex ">
-              <Form.Control
-                type="search"
-                placeholder="Search User"
-                className="me-2"
-                aria-label="Search">
-              </Form.Control>
-              <Button variant="outline-success text-white">Search</Button>
-            </Form>
+            <SearchUser/>
             <StyledBadge
               overlap="circular"
               anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
