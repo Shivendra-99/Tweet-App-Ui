@@ -87,10 +87,10 @@ function SignUp() {
     };
 
     return (
-        <Container>
+         <Container fluid>
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Row className="mb-3">
-                    <Form.Group as={Col} md="4" controlId="validationCustom01" style={{ width: "240px" }}>
+                    <Form.Group as={Col} md="5" controlId="validationCustom01" style={{ width: "240px" }}>
                         <Form.Label className="text-white">First name</Form.Label>
                         <InputGroup hasValidation>
                             <Form.Control
@@ -101,8 +101,8 @@ function SignUp() {
                                 value={firstName}
                                 onChange={setfirstName}
                             />
-                            <Form.Control.Feedback type="invalid">Please Enter Email id</Form.Control.Feedback>
-                            <Form.Control.Feedback type="valid">Looks Good!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid" >Please Enter Email id</Form.Control.Feedback>
+                            <Form.Control.Feedback type="valid" >Looks Good!</Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
                     <Form.Group as={Col} md="4" controlId="validationCustom02" style={{ width: "240px" }}>
@@ -116,8 +116,8 @@ function SignUp() {
                                 value={lastName}
                                 onChange={setlastName}
                             />
-                            <Form.Control.Feedback type="invalid">Please Enter Last Name</Form.Control.Feedback>
-                            <Form.Control.Feedback type="valid">Looks Good!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid" >Please Enter Last Name</Form.Control.Feedback>
+                            <Form.Control.Feedback type="valid" >Looks Good!</Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
                     <Form.Group as={Col} md="4" controlId="validationCustomUsername" style={{ width: "240px" }}>
@@ -130,6 +130,7 @@ function SignUp() {
                                 value={email}
                                 onChange={setEmail}
                                 required
+                                isValid={email.match("/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:[a-zA-Z0-9-]+)*$/")}
                             />
                             <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
@@ -143,7 +144,7 @@ function SignUp() {
                     <Form.Group as={Col} md="6" controlId="validationCustom03">
                         <Form.Label className="text-white">Mobile Number</Form.Label>
                         <Form.Control type="Number" placeholder="Mobile Number" value={mobileNumber} onChange={setMobileNumber} required />
-                        <Form.Control.Feedback type="invalid">
+                        <Form.Control.Feedback type="invalid" >
                             Please Enter valid mobile number.
                         </Form.Control.Feedback>
                         <Form.Control.Feedback type="valid">Looks Good!</Form.Control.Feedback>
@@ -151,28 +152,32 @@ function SignUp() {
                     <Form.Group>
                     <Form.Label className="text-white">Enter Date Of Birth</Form.Label>
                     <Form.Control type="date" placeholder="Please Enter Date Of Birth" value={dateOfBirth} onChange={setDob} required/>
-                    <Form.Control.Feedback type="invalid">
+                    <Form.Control.Feedback type="invalid" >
                             Please Enter valid Date Of Birth.
                      </Form.Control.Feedback>
-                    <Form.Control.Feedback type="valid">Looks Good!</Form.Control.Feedback>
+                    <Form.Control.Feedback type="valid" >Looks Good!</Form.Control.Feedback>
                     </Form.Group>
                 </Row>
                 <Row className="mb-3">
                     <Form.Group as={Row} md="3" controlId="validationCustom04">
                         <Form.Label className="text-white">Password</Form.Label>
-                        <Form.Control type="password" placeholder="Enter Password" value={password} onChange={setPassword} required />
+                        <Form.Control type="password" placeholder="Enter Password" value={password} onChange={setPassword} required 
+                        isInvalid={password!==conPassword}
+                        />
                         <Form.Control.Feedback type="invalid">
                             Please provide a valid Password.
                         </Form.Control.Feedback>
-                        <Form.Control.Feedback type="valid">Looks Good!</Form.Control.Feedback>
+                        <Form.Control.Feedback type="valid" >Looks Good!</Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group as={Row} md="3" controlId="validationCustom05">
                         <Form.Label className="text-white">Confirm Password</Form.Label>
-                        <Form.Control type="password" placeholder="Confirm Password" value={conPassword} onChange={setconPassword} required />
-                        <Form.Control.Feedback type="invalid">
+                        <Form.Control type="password" placeholder="Confirm Password" value={conPassword} onChange={setconPassword}
+                        isInvalid={password!==conPassword}
+                        required />
+                        <Form.Control.Feedback type="invalid" >
                             Please provide a valid Password.
                         </Form.Control.Feedback>
-                        <Form.Control.Feedback type="valid">Looks Good!</Form.Control.Feedback>
+                        <Form.Control.Feedback type="valid" >Looks Good!</Form.Control.Feedback>
                     </Form.Group>
                 </Row>
                 <Form.Group className="mb-3">
