@@ -18,8 +18,6 @@ import EditIcon from '@mui/icons-material/Edit';
 function stringToColor(string) {
     let hash = 0;
     let i;
-
-    /* eslint-disable no-bitwise */
     for (i = 0; i < string.length; i += 1) {
         hash = string.charCodeAt(i) + ((hash << 5) - hash);
     }
@@ -97,7 +95,7 @@ function ShowCard(props) {
         });
     }
     return (
-        <Card sx={{ maxWidth: '700px', marginLeft: "290px", marginTop: "15px", border: '1px solid blue' }} key={key}>
+        <Card sx={{ maxWidth: '700px', marginLeft: "290px", marginTop: "10px", border: '1px solid blue' }} key={key}>
             <CardHeader
                 avatar={
                     <Avatar {...stringAvatar(username)} style={{ marginLeft: "10px" }} />
@@ -193,17 +191,17 @@ function ShowCard(props) {
                                     }).then((response) => {
                                         const data = response.json();
                                         if (response.status === 200 || data === null) {
-                                            window.alert("Comment Posted Successfully");
+                                            toast.success("Comment Posted Successfully");
                                         } else {
-                                            window.alert("Something went wrong")
+                                            toast.error("Something went wrong")
 
                                         }
                                     }).catch((resp) => {
-                                        window.alert("Something went wrong");
+                                        toast.error("Something went wrong");
                                     });
 
                                 } else {
-                                    window.alert("Comment can not be empty");
+                                    toast.error("Comment can not be empty");
                                 }
 
                             }}>Post Comment</Button>
@@ -211,34 +209,6 @@ function ShowCard(props) {
                     </Box>
                 </Modal>
             </CardActions>
-            {/*   <Card.Subtitle className="mb-2 text-black" style={{ marginLeft: "70px" }}>{twee}</Card.Subtitle>
-            <Card.Text>
-            </Card.Text>
-            <div style={{
-                display: 'block',
-                width: 'fit-content',
-                marginLeft: "60px"
-            }}>
-                <FormControlLabel
-                    control={<Checkbox icon={<FavoriteBorder />}
-                        checkedIcon={<Favorite />}
-                        name="checkedH" />}
-                    label={like.length}
-                    className="text-black"
-                    onClick={() => {
-                        
-                    }}
-                />
-
-                <Button style={{ marginLeft: "95px" }} onClick={handleOpen}><CommentIcon /> Comment</Button>
-                <Button style={{ marginLeft: "120px", backgroundColor: "white", outline: "white" }} onClick={() => {
-
-
-                    
-                }
-                }
-                ><DeleteForeverIcon sx={{ color: red[500] }} /></Button>
-            </div> */}
         </Card>
     );
 }
